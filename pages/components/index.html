@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Selenium Test Example Page</title>
+
+	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+	<script src="components.js"></script>
+
+<body>
+
+	<div class="container">
+		<h1>Selenium Test Example Page</h1>
+
+		<h2>Lists</h2>
+
+		<div id="list-test">
+			<ul class="list">
+				<li>One</li>
+				<li>Two</li>
+				<li>Three</li>
+				<li>Four</li>
+			</ul>
+		</div>
+
+		<h2>Tables</h2>
+
+		<table>
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>Name</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>1</td>
+					<td>John Doe</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>Jack Doe</td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>Jane Doe</td>
+				</tr>
+				<tr>
+					<td>4</td>
+					<td>John Smith</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<h2>Form Elements</h2>
+		<form id="myform">
+			<input type="text" name="text" value="" placeholder="Input Text Here"><br>
+			<input type="password" name="password" value=""><br>
+			<input type="checkbox" name="checkbox"> Check It<br>
+			<input type="checkbox" name="disabled-checkbox" disabled="true"> Check It<br>
+			<select name="select" id="dropdown">
+				<option value="option1">Option 1</option>
+				<option value="option2">Option 2</option>
+				<option value="option3">Option 3</option>
+				<option value="option4">Option 4</option>
+			</select><br>
+			<select name="select" id="multi-select" multiple="true">
+				<option value="option1">Option 1</option>
+				<option value="option2">Option 2</option>
+				<option value="option3">Option 3</option>
+				<option value="option4">Option 4</option>
+			</select><br>
+			<input type="radio" id="radiobtn1" name="radio" value="radio1"> Radio 1<br>
+			<input type="radio" name="radio" value="radio2"> Radio 2<br>
+			<textarea name="textarea" style="margin: 0px; width: 299px; height: 135px;"></textarea><br>
+			<input type="submit" id="submitbtn" value="Submit">
+		</form>
+
+		<h2>Visibility</h2>
+
+		<p>
+			<span id="visibility-span" style="background-color: blue; width: 50px; display: inline-block;">&nbsp;</span>
+			<button id="visibility-button">Toggle
+				visibility</button>
+		</p>
+		<p>
+			<span id="display-span" style="background-color: blue; width: 50px; display: inline-block;">&nbsp;</span>
+			<button id="display-button">Toggle display</button>
+		</p>
+
+	</div>
+
+</body>
+
+</html>
