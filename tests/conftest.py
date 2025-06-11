@@ -7,6 +7,7 @@ from selenium import webdriver
 def driver():
     print("Before")
     options = Options()
+    # options.add_argument("--headless")  # Run in headless mode
     options.add_experimental_option("detach", True)
     driver = webdriver.Chrome(options=options)
     yield driver
