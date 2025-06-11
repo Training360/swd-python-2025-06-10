@@ -61,3 +61,23 @@ def test_outline_items_xpath(driver: WebDriver):
     print(items)
     assert len(items) > 10
     assert items[0] == "Webes alkalmazások felépítése"
+
+
+def test_outline_performance(driver: WebDriver):
+    # Given
+    driver.get(
+        "https://www.training360.com/tesztautomatizalas-selenium-webdriverrel-pythonban-tanfolyam-swd-python"
+    )
+    # When
+    div = driver.find_element(By.CSS_SELECTOR, "#C_Outline")
+    title_elements = div.find_elements(By.CSS_SELECTOR, "p > b")
+    titles = [element.text for element in title_elements]
+
+    item_elements = div.find_elements(By.CSS_SELECTOR, "ul > li")
+    items = [element.text for element in item_elements]
+
+    # Then
+    assert len(titles) == 6
+    assert titles[0] == "Technológiai bevezetés"
+    assert len(items) > 10
+    assert items[0] == "Webes alkalmazások felépítése"
