@@ -41,3 +41,34 @@ def test_table_dictionary(driver: WebDriver):
     print(rows)
 
     assert "Jack Doe" == [row["name"] for row in rows if row["id"] == "2"][0]
+
+
+def test_checkboxes(driver: WebDriver):
+    driver.get("http://127.0.0.1:5501/pages/components/")
+    checkbox1 = driver.find_element(By.NAME, "checkbox")
+    assert not checkbox1.is_selected()
+    assert checkbox1.is_enabled()
+    checkbox1.click()
+    assert checkbox1.is_selected()
+
+
+def test_checkboxes_disabled(driver: WebDriver):
+    driver.get("http://127.0.0.1:5501/pages/components/")
+    checkbox1 = driver.find_element(By.NAME, "disabled-checkbox")
+    assert not checkbox1.is_enabled()
+
+
+def test_visibility(driver: WebDriver):
+    driver.get("http://127.0.0.1:5501/pages/components/")
+    span = driver.find_element(By.ID, "visibility-span")
+    assert span.is_displayed()
+    driver.find_element(By.ID, "visibility-button").click()
+    assert not span.is_displayed()
+
+
+def test_display(driver: WebDriver):
+    driver.get("http://127.0.0.1:5501/pages/components/")
+    span = driver.find_element(By.ID, "display-span")
+    assert span.is_displayed()
+    driver.find_element(By.ID, "display-button").click()
+    assert not span.is_displayed()
