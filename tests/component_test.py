@@ -1,5 +1,6 @@
 from selenium.webdriver.remote.webdriver import WebDriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.select import Select
 
 
 def test_find_by_natural_id(driver: WebDriver):
@@ -72,3 +73,27 @@ def test_display(driver: WebDriver):
     assert span.is_displayed()
     driver.find_element(By.ID, "display-button").click()
     assert not span.is_displayed()
+
+
+def test_select(driver: WebDriver):
+    driver.get("http://127.0.0.1:5501/pages/components/")
+    select = Select(driver.find_element(By.ID, "dropdown"))
+
+    select.select_by_value("option2")
+    assert select.first_selected_option.text == "Option 2"
+    assert not select.is_multiple
+
+
+def test_multiple_select(driver: WebDriver):
+    driver.get("http://127.0.0.1:5501/pages/components/")
+    select = Select(driver.find_element(By.ID, "multi-select"))
+
+    assert select.is_multiple
+
+    select.select_by_value("option1")
+    select.select_by_value("option3")
+
+    assert [element.text for element in select.all_selected_options] == [
+        "Option 1",
+        "Option 3",
+    ]
