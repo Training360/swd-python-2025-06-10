@@ -18,4 +18,4 @@ jobs:
       # - name: Run tests
       # run: pytest tests/employees_test.py::test_save
       - name: Run Docker compose
-        run: cd employee-e2e && docker compose up --abort-on-container-exit
+        run: cd employees-e2e && docker compose up --abort-on-container-exit
