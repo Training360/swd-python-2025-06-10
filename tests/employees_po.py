@@ -2,6 +2,7 @@ from selenium.webdriver.remote.webdriver import WebDriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+import os
 
 
 class EmployeesPage:
@@ -10,7 +11,8 @@ class EmployeesPage:
 
     def go(self):
         """Navigate to the calculator page."""
-        self.driver.get("http://127.0.0.1:5025")
+        url = os.getenv("EMPLOYEES_URL", "http://localhost:5025")
+        self.driver.get(url)
 
     def set_name(self, name: str = "John Doe"):
         """Set the name of the employee."""
