@@ -1,0 +1,19 @@
+name: Run tests
+on:
+  push:
+    branches: [master]
+
+jobs:
+  e2e:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Hello world
+        run: echo "Hello, world!"
+      - name: Check Python
+        run: python --version
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Run tests
+        run: pytest tests/employees_test.py::test_save
