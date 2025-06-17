@@ -1,0 +1,9 @@
+https://www.selenium.dev/selenium/web/
+https://www.letskodeit.com/practice
+http://uitestingplayground.com/
+https://ultimateqa.com/automation
+https://testpages.eviltester.com/styled/index.html
+https://magento.softwaretestingboard.com/
+https://the-internet.herokuapp.com/
+https://www.saucedemo.com/
+https://opensource-demo.orangehrmlive.com/
